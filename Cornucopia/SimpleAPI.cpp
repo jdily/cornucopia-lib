@@ -131,6 +131,7 @@ vector<BasicBezier> toBezierSpline(const vector<BasicPrimitive> &curve, double t
             out[i].controlPoint[j].x = pt[0];
             out[i].controlPoint[j].y = pt[1];
         }
+        out[i].type = spline->primitives()[i].type;
     }
 
     return out;

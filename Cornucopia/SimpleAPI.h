@@ -66,6 +66,7 @@ std::vector<BasicPrimitive> fit(const std::vector<Point> &points, const Paramete
 struct BasicBezier
 {
     Point controlPoint[4];
+    int type;
 };
 
 std::vector<BasicBezier> toBezierSpline(const std::vector<BasicPrimitive> &curve, double tolerance);

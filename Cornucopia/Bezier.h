@@ -24,7 +24,7 @@
 #include "defs.h"
 #include "smart_ptr.h"
 #include "VectorC.h"
-
+// CORNU_SMART_FORW_DECL(BasicPrimitive);
 NAMESPACE_Cornu
 
 class CubicBezier
@@ -38,10 +38,12 @@ public:
     void eval(double t, Vec *pos, Vec *der = NULL, Vec *der2 = NULL) const;
 
     const Vec &controlPoint(int i) const { return _pts[i]; }
+    int type;
 
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 private:
     Vec _pts[4];
+    
 };
 
 CORNU_SMART_FORW_DECL(BezierSpline);
