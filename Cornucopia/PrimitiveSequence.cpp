@@ -205,6 +205,7 @@ BezierSplinePtr PrimitiveSequence::toBezierSpline(double tolerance) const
             double end = start + step;
             CubicBezier cur = CubicBezier::hermite(_primitives[i]->pos(start), _primitives[i]->pos(end),
                                                     _primitives[i]->der(start) * step, _primitives[i]->der(end) * step);
+            cur.type = _primitives[i]->getType();
             segments.push_back(cur);
         }
     }

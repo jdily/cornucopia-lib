@@ -268,6 +268,8 @@ public:
 protected:
     void _run(const Fitter &fitter, AlgorithmOutput<GRAPH_CONSTRUCTION> &out)
     {
+        // ichao : get all the fitted primitives...
+        // we should prune some of the primitives that go out of bound here....
         const vector<FitPrimitive> &primitives = fitter.output<PRIMITIVE_FITTING>()->primitives;
         PolylineConstPtr poly = fitter.output<RESAMPLING>()->output;
         VectorC<bool> corners = fitter.output<RESAMPLING>()->corners;
